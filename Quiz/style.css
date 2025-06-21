@@ -19,6 +19,7 @@
       place-items: center;
       padding: 1rem;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-size: cover;
     }
 
     .container {

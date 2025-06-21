@@ -1,0 +1,246 @@
+ * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --body-bg: #252525;
+      --primary: #eaca5b;
+      --primary-dark: #2d2b28;
+      --white: #ffffff;
+      --gray: #929292;
+    }
+
+    body {
+      background-image: url('Images/Arknights_bg.jpg');
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 1rem;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 400px;
+      background-color: rgba(255, 255, 255, 0.6);
+      border-radius: 20px;
+      padding: 2rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .container .quiz-progress {
+      display: flex;
+      justify-content: space-between;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .container .quiz-progress span {
+      width: 100%;
+      height: 6px;
+      border-radius: 25px;
+      background-color: rgba(255, 255, 255, 0.6);
+    }
+
+    .container .quiz-progress span.seen {
+      background-color: var(--primary);
+    }
+
+    .container .question-container {
+      margin: 2rem auto;
+      font-size: 1.5rem;
+      color: #000;
+    }
+
+    .container .question-container p:first-of-type {
+      color: #555;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .container .question-container p:last-of-type {
+      font-size: 2rem;
+      color: #000;
+      line-height: 1.4;
+    }
+
+    .container .answer-container button {
+      display: block;
+      width: 100%;
+      padding: 1rem;
+      border-radius: 3rem;
+      border: none;
+      font-size: 1.2rem;
+      margin: 0.8rem auto;
+      background-color:rgba(255, 255, 255, 0.6);
+      border: 2px solid #e0e0e0;
+      color: #333;
+      transition: all 0.2s ease;
+      cursor: pointer;
+      text-align: left;
+      padding-left: 1.5rem;
+    }
+
+    .container .answer-container button:hover {
+      background-color: rgb(234, 202, 91, 0.6);
+      border-color: #d0d0d0;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .container .answer-container button:active {
+      transform: translateY(0);
+    }
+
+    /* Score display section with black text */
+    .container-score {
+      width: 100%;
+      min-height: 300px;
+      background-color: rgba(255, 255, 255, 0.95);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 1.5rem;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.1);
+    }
+
+    .score-display {
+      text-align: center;
+      padding: 2rem;
+      width: 100%;
+    }
+
+    .score-display p:first-child {
+      color: #000 !important; /* Black */
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+      font-weight: bold;
+    }
+
+    .final-score {
+      color: #000 !important; /* Black */
+      font-size: 2.2rem !important;
+      font-weight: bold;
+      margin: 1.5rem 0;
+    }
+
+    .percentage {
+      color: #000 !important; /* Black */
+      font-size: 3.5rem !important;
+      font-weight: bold;
+      margin: 1.5rem 0;
+      position: relative;
+      display: inline-block;
+    }
+
+    .percentage::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: var(--primary);
+      border-radius: 2px;
+    }
+
+    .restart-btn {
+      background-color: var(--primary) !important;
+      color: #000 !important; /* Black */
+      border: 5px solid black;
+      font-weight: bold;
+      width: 100% !important;
+      padding: 1rem 0.5rem !important;
+      font-size: 1.2rem !important;
+      border-radius: 3rem !important;
+      margin-top: 2rem;
+      transition: all 0.3s ease;
+    }
+
+    .restart-btn:hover {
+      background-color: #d8b64a !important;
+      transform: scale(1.03);
+      box-shadow: 0 5px 15px rgba(234, 202, 91, 0.4);
+    }
+    
+    /* Animation for final score */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .container-score {
+      animation: fadeIn 0.6s ease-out;
+    }
+    
+    .header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    
+    .header h1 {
+      color: #fff;
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    }
+    
+    .header p {
+      color: #e0e0e0;
+      font-size: 1.1rem;
+    }
+
+    /* Larger Music Button */
+    #music {
+      background-color: #f9f9f9;
+      border: 10px solid #ffe066;
+      border-radius: 50%;
+      height: 100px; /* Increased from 70px */
+      width: 100px;  /* Increased from 70px */
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: fixed; /* Changed to fixed for better positioning */
+      left: 25px;
+      bottom: 25px;
+      z-index: 10;
+      transition: all 0.3s ease;
+    }
+
+    #music i {
+      font-size: 50px; /* Increased from 40px */
+      color: #666;
+      transition: color 0.3s ease;
+    }
+
+    #music:hover {
+      background-color: #a38819;
+      transform: scale(1.1);
+    }
+
+    #music:hover i {
+      color: white;
+    }
+
+    #music.playing {
+      background-color: #4CAF50;
+      animation: pulse 2s infinite;
+    }
+
+    #music.playing i {
+      color: white;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }

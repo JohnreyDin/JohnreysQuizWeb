@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">   
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" type="x-icon" href="Images/quiz.png">
+    <title>Johnrey's Quiz</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="quiz-progress" id="quizProgress"></div>
+      <div class="question-container" id="questionContainer"></div>
+      <div class="answer-container" id="answerContainer"></div>
+    </div>
+
+    <div id="music" onclick="toggleMusic()">
+        <i class="fa-solid fa-music"></i>
+        <div class="volume-tooltip"></div>
+        <audio id="backgroundMusic" loop volume="0.3">
+            <source src="Arknights EP - Code of Brawl [Speed of Light] DJ OKAWARI feat. Ai Ninomiya.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
